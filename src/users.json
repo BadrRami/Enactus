@@ -1,0 +1,174 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "abdessamad.merroune@enactus-ista.ma",
+      "password": "enactus2024!",
+      "role": "president",
+      "name": "abdessamad merroune",
+      "position": "President ENACTUS ISTA AL ADARISSA",
+      "email": "abdessamad.merroune@enactus-ista.ma",
+      "joinDate": "2025-09-15",
+      "avatar": "resources/avatars/president.jpg",
+      "statut": "Président",
+      "permissions": [
+        "read",
+        "write",
+        "delete",
+        "approve",
+        "generate_reports"
+      ]
+    },
+    {
+      "id": "2",
+      "username": "YOUSSEF.BOUMGHADER@enactus-ista.ma",
+      "password": "treasury2024!",
+      "role": "treasurer",
+      "name": "YOUSSEF BOUMGHADER",
+      "position": "Treasurer ENACTUS ISTA AL ADARISSA",
+      "email": "YOUSSEF.BOUMGHADER@enactus-ista.ma",
+      "joinDate": "2025-09-15",
+      "avatar": "resources/avatars/treasurer.jpg",
+      "permissions": [
+        "read",
+        "write",
+        "delete",
+        "approve",
+        "generate_reports"
+      ]
+    },
+    {
+      "id": "3",
+      "username": "member1",
+      "password": "member2024!",
+      "role": "member",
+      "name": "Fatima Zahra",
+      "position": "General Member",
+      "email": "fatima.zahra@enactus-ista.ma",
+      "joinDate": "2023-10-01",
+      "avatar": "resources/avatars/member1.jpg",
+      "permissions": [
+        "read",
+        "submit_requests",
+        "donate"
+      ]
+    },
+    {
+      "id": "4",
+      "username": "member2",
+      "password": "member2024!",
+      "role": "member",
+      "name": "Youssef Amrani",
+      "position": "Project Manager",
+      "email": "youssef.amrani@enactus-ista.ma",
+      "joinDate": "2023-10-15",
+      "avatar": "resources/avatars/member2.jpg",
+      "permissions": [
+        "read",
+        "submit_requests",
+        "donate"
+      ]
+    },
+    {
+      "id": "5",
+      "username": "member3",
+      "password": "member2024!",
+      "role": "member",
+      "name": "Mariam El Idrissi",
+      "position": "Marketing Team",
+      "email": "mariam.elidrissi@enactus-ista.ma",
+      "joinDate": "2023-11-01",
+      "avatar": "resources/avatars/member3.jpg",
+      "permissions": [
+        "read",
+        "submit_requests",
+        "donate"
+      ]
+    },
+    {
+      "id": "6",
+      "username": "member4",
+      "password": "member2024!",
+      "role": "member",
+      "name": "Omar Bennis",
+      "position": "Finance Team",
+      "email": "omar.bennis@enactus-ista.ma",
+      "joinDate": "2023-11-15",
+      "avatar": "resources/avatars/member4.jpg",
+      "permissions": [
+        "read",
+        "submit_requests",
+        "donate"
+      ]
+    },
+    {
+      "id": "7",
+      "username": "member5",
+      "password": "member2024!",
+      "role": "member",
+      "name": "Amina El Bakkali",
+      "position": "HR Team",
+      "email": "amina.elbakkali@enactus-ista.ma",
+      "joinDate": "2023-12-01",
+      "avatar": "resources/avatars/member5.jpg",
+      "permissions": [
+        "read",
+        "submit_requests",
+        "donate"
+      ]
+    },
+    {
+      "id": "8",
+      "username": "member6",
+      "password": "member2024!",
+      "role": "member",
+      "name": "Khalid El Amrani",
+      "position": "Logistics Team",
+      "email": "khalid.elamrani@enactus-ista.ma",
+      "joinDate": "2023-12-15",
+      "avatar": "resources/avatars/member6.jpg",
+      "permissions": [
+        "read",
+        "submit_requests",
+        "donate"
+      ]
+    },
+    {
+      "id": "1766694519947",
+      "teamName": "Ismail kandar",
+      "email": "finn@gmail.com",
+      "password": "123.123",
+      "role": "VISE TEAM LEADER"
+    },
+    {
+      "id": 1767010236902,
+      "statut": "Membre",
+      "nom": "Rami",
+      "email": "finn@gmail.com",
+      "filiere": "Développement Digital option full stack",
+      "password": "123.123",
+      "etatCotisation": true,
+      "tel": "0688692750"
+    },
+    {
+      "id": 1767013616594,
+      "statut": "Membre",
+      "nom": "Bilal Joubairi",
+      "email": "Bilal.Bilal@gmail.com",
+      "filiere": "Développement Digital option full stack",
+      "password": "aze",
+      "etatCotisation": true,
+      "tel": "0756346587"
+    },
+    {
+      "id": 1767013707235,
+      "statut": "Membre",
+      "nom": "test3 tesT3",
+      "email": "test3@gmail.com",
+      "filiere": "Gestion des entreprise option RH",
+      "password": "test3",
+      "etatCotisation": false,
+      "tel": "0656453445"
+    }
+  ]
+}
