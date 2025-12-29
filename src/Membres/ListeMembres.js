@@ -1,10 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { supprimerMembre } from '../Features/ThunkUsers';
 
 const ListeMembres = () => {
     const { connectedUser, loading, error,listUsers } = useSelector((state) => state.users);
     const resultat = listUsers.filter((ele) => ele.statut==="Membre")
+    const dispatch=useDispatch()
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
     
@@ -35,7 +37,8 @@ const ListeMembres = () => {
                                 <td>{el.tel}</td>
                                 <td>
                                     <Link to={`/modifierMembre/${el.id}`} className='btn btn-warning'>🖊</Link>
-                                    <button className='btn btn-danger'>🗑</button>
+                                    <button className='btn btn-danger' onClick={()=>dispatch(supprimerMembre(el.id))}>🗑</button> 
+                                    
                                 </td>
                             </tr>
                         )

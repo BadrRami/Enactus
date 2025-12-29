@@ -11,4 +11,8 @@ export const ajouterMembre = createAsyncThunk("Membre/ajouterMembre", async (dat
 export const modifierMembre = createAsyncThunk("Membre/modifierMembre", async ({id, data}) => { 
     const response = await axios.put(`http://localhost:5000/users/${id}`, data); 
     return response.data; 
+}); 
+export const supprimerMembre = createAsyncThunk("Membre/supprimerMembre", async(id)=>{
+    await axios.delete(`http://localhost:5000/users/${id}`); 
+    return id; 
 });

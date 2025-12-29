@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ajouterMembre, getUsers, modifierMembre } from './ThunkUsers';
+import { ajouterMembre, getUsers, modifierMembre, supprimerMembre } from './ThunkUsers';
 
 export const sliceUsers = createSlice({
   name: 'users',
@@ -42,13 +42,37 @@ export const sliceUsers = createSlice({
         state.loading = false;
         state.error = action.payload || action.error.message;
       })
+      // Code pour ajouter , modifier et supprimer les Membres dans le serveur Users
       .addCase(ajouterMembre.fulfilled, (state, action) => {
         state.listUsers.push(action.payload);
       })
       .addCase(modifierMembre.fulfilled,(state,action)=>{
+        const { id,statut, nom, email, filiere,password,etatCotisation,tel } = action.payload;
+        const Membre = state.listUsers.find((memebre)=> memebre.id=== id)
+        if(Membre){
+          Membre.nom = nom
+          Membre.email=email
+          Membre.filiere=filiere
+          Membre.password=password
+          Membre.etatCotisation=etatCotisation
+          Membre.tel=tel
+        }
 
+      })
+      .addCase(supprimerMembre.pending, (state) => {
+      state.loading = true;
+      })
+      .addCase(supprimerMembre.fulfilled, (state, action) => {
+        state.loading = false;
+        state.listUsers = state.listUsers.filter(
+          el => String(el.id) !== String(action.payload)
+        );
+      })
+      .addCase(supprimerMembre.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
       });
-  }
+    }
 });
 
 export const { trouverUsers } = sliceUsers.actions;

@@ -46,6 +46,8 @@ const ModifierMembre = () => {
         setFiliere(membre.filiere || "");
         setTel(membre.tel || "");
         setEtatCotisation(membre.etatCotisation ?? null);
+        setMotDePasse(membre.password || "")
+        setConfirmerMotDePasse(membre.password || "")
     }
     }, [id, listUsers]);
 
