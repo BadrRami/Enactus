@@ -28,7 +28,7 @@ const AjouterMembre = () => {
             alert("vous devez cocher l''etat de cotisation")
             return
         }
-        const newMmebre = {id: Date.now(), statut: "Membre", 
+        const newMmebre = {id: String(Date.now()), statut: "Membre", 
             nom: nom, email: email, filiere: filiere, 
             password: motDePasse, etatCotisation: etatCotisation,
             tel:tel

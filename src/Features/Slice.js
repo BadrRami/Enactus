@@ -46,9 +46,15 @@ export const sliceUsers = createSlice({
       .addCase(ajouterMembre.fulfilled, (state, action) => {
         state.listUsers.push(action.payload);
       })
+      .addCase(modifierMembre.pending,(state, action)=>{
+        state.loading = true;
+        state.error = null;
+      })
       .addCase(modifierMembre.fulfilled,(state,action)=>{
+        state.loading = false;
         const { id,statut, nom, email, filiere,password,etatCotisation,tel } = action.payload;
-        const Membre = state.listUsers.find((memebre)=> memebre.id=== id)
+        const stringId = String(id);
+        const Membre = state.listUsers.find((m) => m.id === stringId);
         if(Membre){
           Membre.nom = nom
           Membre.email=email
@@ -59,6 +65,12 @@ export const sliceUsers = createSlice({
         }
 
       })
+      .addCase(modifierMembre.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload || action.error.message;
+      })
+
+
       .addCase(supprimerMembre.pending, (state) => {
       state.loading = true;
       })

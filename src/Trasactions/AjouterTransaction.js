@@ -23,7 +23,7 @@ const AjouterTransaction = () => {
             return;
         }
         const newTransaction = {
-            id: Date.now(),
+            id: String(Date.now()),
             description: description,
             montant: parseFloat(montant),
             date: date,

@@ -7,9 +7,9 @@ import Contact from "./Contact";
 import Profile from "./Profile";
 import Dashboard from "./Dashboard";
 import AjouterMembre from "./Membres/AjouterMembre";
-import AjouterMembreEquipe from "./AjouterMembreEquipe";
+import AjouterMembreEquipe from "./EquipeBureau/AjouterMembreEquipe";
 import AjouterEvenement from "./Events/AjouterEvenement";
-import Equipe from "./Equipe";
+import Equipe from "./EquipeBureau/Equipe";
 import AjouterTransaction from "./Trasactions/AjouterTransaction";
 import ListeTransaction from "./Trasactions/ListeTransaction";
 import ModifierTransaction from "./Trasactions/ModifierTransaction";
@@ -17,6 +17,7 @@ import Evenement from "./Events/Evenement";
 import ModifierEvent from "./Events/ModifierEvent";
 import Parametre from "./Parametre";
 import ModifierMembre from "./Membres/ModifierMembre";
+import ModifierMembreEquipe from "./EquipeBureau/ModifierMembreEquipe";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
       <Route path="/modifierMembre/:id" element={<ModifierMembre />} />
 
       <Route path="/ajouterMembreEquipe" element={<AjouterMembreEquipe />} />
+      <Route path="/modifierMembreEquipe/:id" element={<ModifierMembreEquipe />} />
       <Route path="/equipe" element={<Equipe />} />
       
       <Route path="/parametre" element={<Parametre />} />

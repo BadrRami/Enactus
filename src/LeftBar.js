@@ -6,7 +6,7 @@ const LeftBar = () => {
     const { connectedUser, loading, error,listUsers } = useSelector((state) => state.users);
     return (
         <div>
-            <div style={{width:"250px", background:"#2d2c2cff", height:"600px", borderRadius:"0% 2% 2% 0%", display:"block", justifyContent:"center", fontSize:"24px", marginRight:"20px"}}>
+            <div style={{width:"250px", background:"#2d2c2cff", height:"100vh", borderRadius:"0% 2% 2% 0%", display:"block", justifyContent:"center", fontSize:"24px", marginRight:"20px"}}>
                         <h4 style={{color: "white"}}>ENACTUS ISTA AL ADARISSA</h4>
                         <div>
                             <ul style={{listStyleType:"none", paddingLeft:"10px"}}>

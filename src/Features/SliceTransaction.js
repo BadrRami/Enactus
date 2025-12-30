@@ -8,7 +8,7 @@ const sliceTransactions = createSlice({
         loading: false,
         error: null,
     },
-    reducers: {}, // 🔹 on supprime les reducers locaux CRUD
+    reducers: {}, 
     extraReducers: (builder) => {
         builder
         // GET
@@ -23,13 +23,13 @@ const sliceTransactions = createSlice({
         // DELETE
         .addCase(supprimerTransactions.fulfilled, (state, action) => {
             state.listeTransaction = state.listeTransaction.filter(
-                transaction => transaction.id !== Number(action.payload)
+                transaction => transaction.id !== String(action.payload)
             );
         })
 
         // UPDATE
         .addCase(modifierTransactions.fulfilled, (state, action) => {
-            const index = state.listeTransaction.findIndex(t => t.id === action.payload.id);
+            const index = state.listeTransaction.findIndex(t => String(t.id) === String(action.payload.id));
             if (index !== -1) {
                 state.listeTransaction[index] = action.payload;
             }

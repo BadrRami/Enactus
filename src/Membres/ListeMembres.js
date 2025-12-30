@@ -28,7 +28,7 @@ const ListeMembres = () => {
                 <tbody>
                     {
                         resultat.map((el,index)=>(
-                            <tr>
+                            <tr key={el.id}>
                                 <th>{index + 1}</th>
                                 <td>{el.nom }</td>
                                 <td>{el.email }</td>
@@ -37,8 +37,7 @@ const ListeMembres = () => {
                                 <td>{el.tel}</td>
                                 <td>
                                     <Link to={`/modifierMembre/${el.id}`} className='btn btn-warning'>🖊</Link>
-                                    <button className='btn btn-danger' onClick={()=>dispatch(supprimerMembre(el.id))}>🗑</button> 
-                                    
+                                    <button className='btn btn-danger' onClick={()=>dispatch(supprimerMembre(el.id))}>🗑</button>  
                                 </td>
                             </tr>
                         )

@@ -18,16 +18,30 @@ const ModifierTransaction = () => {
         event.preventDefault();
         const updatedTransaction = {
             id: id,
+            data:{
             description: description,
             montant: parseFloat(montant),
             date: date,
             type: type,
             categorie: categorie,
             updated_at: new Date().toISOString()
+            }
+            
         };
-        dispatch(modifierTransactions(updatedTransaction,id));
+        dispatch(modifierTransactions(updatedTransaction));
         navigate('/ListeTransaction');
     }
+        React.useEffect(() => {
+        const transaction = listeTransaction.find(el => String(el.id) === String(id));
+        if (transaction) {
+            setDescription(transaction.description || "");
+            setMontant(transaction.montant || "");
+            setDate(transaction.date || "");
+            setType(transaction.type || "");
+            setCategorie(transaction.categorie || "");
+        }
+        }, [id, listeTransaction]);
+    
     return (
         <div className='d-flex'>
             <LeftBar    />

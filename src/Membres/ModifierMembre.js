@@ -29,12 +29,19 @@ const ModifierMembre = () => {
                 alert("vous devez cocher l''etat de cotisation")
                 return
             }
-            const modifierMmebre = {id: Date.now(), statut: "Membre", 
-                nom: nom, email: email, filiere: filiere, 
-                password: motDePasse, etatCotisation: etatCotisation,
-                tel:tel
+            const modifierMembreData = {
+                id: id, // ID existant récupéré via useParams
+                data: {
+                    statut: "Membre",
+                    nom: nom,
+                    email: email,
+                    filiere: filiere,
+                    password: motDePasse,
+                    etatCotisation: etatCotisation,
+                    tel: tel
+                }
             };
-            dispatch(modifierMembre(modifierMmebre));
+            dispatch(modifierMembre(modifierMembreData));
             navigate('/dashboard');
         }
     const { connectedUser, loading, error,listUsers } = useSelector((state) => state.users);
@@ -105,7 +112,7 @@ const ModifierMembre = () => {
                             <label className="form-check-label" htmlFor="non_cotise">Non cotisé</label>
                         </div>
                     </div>
-                    <button type="submit" className="btn btn-primary">Ajouter Membre</button>
+                    <button type="submit" className="btn btn-primary">Modifier Membre</button>
                 </form>
             </div>
             

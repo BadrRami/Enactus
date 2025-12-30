@@ -9,10 +9,10 @@ export const ajouterTransactions = createAsyncThunk("Transaction/ajouterTransact
     return response.data; 
 });
 export const modifierTransactions = createAsyncThunk("Transaction/modifierTransaction", async ({id, data}) => { 
-    const response = await axios.put(`http://localhost:5001/transactions/${id}`, data); 
+    const response = await axios.put(`http://localhost:5001/transactions/${String(id)}`, data); 
     return response.data; 
 });
 export const supprimerTransactions = createAsyncThunk("Transaction/supprimerTransaction", async (id) => { 
-    await axios.delete(`http://localhost:5001/transactions/${id}`); 
+    await axios.delete(`http://localhost:5001/transactions/${String(id)}`); 
     return id; 
 });

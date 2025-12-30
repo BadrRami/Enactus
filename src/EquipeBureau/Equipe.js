@@ -1,14 +1,14 @@
 import React, { use } from 'react';
-import LeftBar from './LeftBar';
-import { useSelector } from 'react-redux';
+import LeftBar from '../LeftBar';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { supprimerMembre } from '../Features/ThunkUsers';
 
 const Equipe = () => {
+    const dispatch= useDispatch()
     const results = useSelector((state) => state.users.listUsers);
     const equipeMembers = results.filter(
-        (user) => String(user.role).toLowerCase() === "vise team leader" || String(user.role).toLowerCase() === "president" 
-        || String(user.role).toLowerCase() === " Responsable RH" || String(user.role).toLowerCase() === "treasurer"
-        || String(user.role).toLowerCase() === "Responsable communication"
+        (user) => String(user.statut) === "Bureau"
     );
     return (
         <div className='d-flex'>
@@ -30,12 +30,12 @@ const Equipe = () => {
                         {equipeMembers.map((member, index) => (
                             <tr key={member.id}>
                                 <th scope="row">{index + 1}</th>
-                                <td>{member.teamName}</td>
+                                <td>{member.nom}</td>
                                 <td>{member.email}</td>
                                 <td>{member.role}</td>
                                 <td>
-                                    <Link className='btn btn-warning'>🖊</Link>
-                                    <Link className='btn btn-danger mx-2'>🗑</Link>
+                                    <Link to={`/modifierMembreEquipe/${member.id}`} className='btn btn-warning'>🖊</Link>
+                                    <button className='btn btn-danger mx-2' onClick={()=>dispatch(supprimerMembre(member.id))}>🗑</button>
                                 </td>
                             </tr>
                         ))}

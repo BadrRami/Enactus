@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LeftBar from '../LeftBar';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { ajouterEvents } from '../Features/ThunkEvents';
 
 const AjouterEvenement = () => {
     const [nom, setNom] = useState('')
@@ -22,9 +23,11 @@ const AjouterEvenement = () => {
             return;
         }
         const idsalma="salma"
-        const Event = {id:Date.now(),nom:nom,date:date, lieu: lieu,
+        const Event = {id:String(Date.now()),nom:nom,date:date, lieu: lieu,
             description:description,created_at: new Date().toISOString(),
             created_by:idsalma}
+        dispatch(ajouterEvents(Event))
+        navigate('/evenement')
 
     }
     return (
@@ -42,7 +45,7 @@ const AjouterEvenement = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="lieu" className="form-label">Lieu</label>
-                    <input type="date" className="form-control" id="lieu" value={lieu} onChange={(e)=> setLieu(e.target.value)} placeholder="Entrez la date de l'événement"/>
+                    <input type="text" className="form-control" id="lieu" value={lieu} onChange={(e)=> setLieu(e.target.value)} placeholder="Entrez le lieu de l'événement"/>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="eventDescription" className="form-label">Description de l'Événement</label>
