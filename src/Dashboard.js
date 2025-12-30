@@ -20,7 +20,7 @@ const Dashboard = () => {
                         <p>Welcome to the dashboard!</p>
                     </div>
                     <div>
-                        {connectedUser?.role === "president" && (
+                        {connectedUser?.role === "president" || connectedUser?.role === "VISE TEAM LEADER" && (
                             <>
                                 <Link to={"/ajouterMembre"} className='btn btn-primary'>➕Ajouter Membre</Link>
                                 <Link to={"/ajouterMembreEquipe"} className='btn btn-success'>➕Ajouter Membre à l'Équipe</Link>

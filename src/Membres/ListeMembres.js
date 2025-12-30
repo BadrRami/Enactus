@@ -22,7 +22,9 @@ const ListeMembres = () => {
                                 <th>Filière</th>
                                 <th>Cotisation</th>
                                 <th>Telephone</th>
+                                {connectedUser.role==="president" || connectedUser?.role === "VISE TEAM LEADER" ? 
                                 <th>Actions</th>
+                                :""}
                     </tr>
                 </thead>
                 <tbody>
@@ -35,10 +37,12 @@ const ListeMembres = () => {
                                 <td>{el.filiere }</td>
                                 <td>{el.etatCotisation === true ? "✔": "❌" }</td>
                                 <td>{el.tel}</td>
+                                {connectedUser.role==="president" || connectedUser?.role === "VISE TEAM LEADER" ? 
                                 <td>
                                     <Link to={`/modifierMembre/${el.id}`} className='btn btn-warning'>🖊</Link>
                                     <button className='btn btn-danger' onClick={()=>dispatch(supprimerMembre(el.id))}>🗑</button>  
                                 </td>
+                                :''}
                             </tr>
                         )
                         )

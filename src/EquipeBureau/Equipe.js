@@ -6,6 +6,7 @@ import { supprimerMembre } from '../Features/ThunkUsers';
 
 const Equipe = () => {
     const dispatch= useDispatch()
+    const { listUsers, connectedUser, error } = useSelector(state => state.users);
     const results = useSelector((state) => state.users.listUsers);
     const equipeMembers = results.filter(
         (user) => String(user.statut) === "Bureau"
@@ -23,7 +24,9 @@ const Equipe = () => {
                             <th scope="col">Nom de l'Équipe</th>
                             <th scope="col">Email</th>
                             <th scope="col">Rôle</th>
+                            {connectedUser.role==="president" || connectedUser?.role === "VISE TEAM LEADER" ? 
                             <th>Actions</th>
+                            :'' }
                         </tr>
                     </thead>
                     <tbody>
@@ -33,10 +36,12 @@ const Equipe = () => {
                                 <td>{member.nom}</td>
                                 <td>{member.email}</td>
                                 <td>{member.role}</td>
+                                {connectedUser.role==="president" || connectedUser?.role === "VISE TEAM LEADER" ? 
                                 <td>
                                     <Link to={`/modifierMembreEquipe/${member.id}`} className='btn btn-warning'>🖊</Link>
                                     <button className='btn btn-danger mx-2' onClick={()=>dispatch(supprimerMembre(member.id))}>🗑</button>
                                 </td>
+                               :""}
                             </tr>
                         ))}
                     </tbody>

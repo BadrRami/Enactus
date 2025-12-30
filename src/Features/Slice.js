@@ -8,6 +8,7 @@ export const sliceUsers = createSlice({
     loading: false,
     error: null,
     connectedUser: null
+
   },
   reducers: {
     trouverUsers: (state, action) => {

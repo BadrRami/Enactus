@@ -17,7 +17,7 @@ const Evenement = () => {
             <div className="flex-grow-1 p-3">
                 <div className="d-flex justify-content-between align-items-center mb-4">
                     <h2>✨ Événements</h2>
-                    {connectedUser.role === "Responsable Media" ||connectedUser.role === "president" && (
+                    {connectedUser.role === "Responsable Media" ||connectedUser.role === "president" || connectedUser?.role === "VISE TEAM LEADER" && (
                         <Link to="/ajouteEvent" className='btn btn-success'>Ajouter un événement</Link>
                     )}
                 </div>

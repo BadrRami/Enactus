@@ -11,28 +11,28 @@
     {
       "id": "2",
       "statut": "Bureau",
+      "nom": "Youssef Boumghader",
       "email": "youssef.boumghader@enactus-ista.ma",
       "password": "treasury2024!",
-      "role": "treasurer",
-      "nom": "Youssef Boumghader"
+      "role": "treasurer"
     },
     {
+      "id": "1767119249183",
+      "statut": "Bureau",
       "nom": "Ismail kandaaaar",
       "email": "ismail@kandar.com",
-      "statut": "Bureau",
       "password": "aze",
       "role": "VISE TEAM LEADER",
-      "updated_at": "2025-12-30T20:22:35.039Z",
-      "id": "1767119249183"
+      "updated_at": "2025-12-30T20:22:35.039Z"
     },
     {
+      "id": "1767119334101",
+      "statut": "Bureau",
       "nom": "Salma BenDriss",
       "email": "salma@gmail.com",
       "password": "aze",
       "role": "Responsable de communication",
-      "updated_at": "2025-12-30T19:52:00.747Z",
-      "id": "1767119334101",
-      "statut": "Bureau"
+      "updated_at": "2025-12-30T19:52:00.747Z"
     },
     {
       "id": "1767127205451",

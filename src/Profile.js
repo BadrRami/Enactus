@@ -17,10 +17,9 @@ const Profile = () => {
                     <LeftBar />
                     <div>
                         <h2>Profile</h2>
-                        <p>Name: {connectedUser.name}</p>
+                        <p>Name: {connectedUser.nom}</p>
                         <p>Email: {connectedUser.email}</p>
                         <p>Role: {connectedUser.role}</p>
-                        <p>Position: {connectedUser.position}</p>
                     </div>
                 </div>
                 </>
